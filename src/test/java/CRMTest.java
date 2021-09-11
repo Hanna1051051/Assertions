@@ -1,5 +1,5 @@
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class CRMTest extends Settings{
     @Test
-    public void crm1() {
+     void crm1() {
         driver.get("https://crm.geekbrains.space/user/login");
         Assertions.assertEquals(driver.findElement(By.cssSelector(".title")).getText(),("Логин"));
         driver.findElement(By.name("_username")).sendKeys("Applanatest1");
@@ -54,7 +54,7 @@ public class CRMTest extends Settings{
         driver.findElement(By.xpath("//button[contains(text(),'Сохранить и закрыть')]")).click();
     }
     @Test
-    public void crm2() {
+     void crm2() {
         WebElement element = driver.findElement(By.xpath("//header/div[@id='main-menu']/ul[1]/li[1]/a[1]"));
         Actions builder = new Actions(driver);
         builder.moveToElement(element).perform();
